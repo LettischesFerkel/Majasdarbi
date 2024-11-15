@@ -85,7 +85,7 @@ int main()
 
     while (t--)
     {
-        unsigned int l, r, i, k;
+        int l, r, i, k;
         int* input[4] = { &l, &r, &i, &k };
         clearInputBuffer(inputBuffer, inputBufferSize);
         fgets(inputBuffer, inputBufferSize, stdin);
@@ -93,10 +93,10 @@ int main()
         //printf("l: %d, r: %d, i: %d, k: %d\n", l, r, i, k);
 
         unsigned int result = 0;
-        for (unsigned int x = l; x <= r; x++) // saraksts ar [l, r] skaitļiem
+        for (int x = l; x <= r; x++) // saraksts ar [l, r] skaitļiem
         {
             //printf("\t%d - ", x);
-            // pārbauda vai x≢ k(mod2i), izlaiž nederīgos
+            // pārbauda vai x=k(mod2i), izlaiž nederīgos
             if (remainderOf2toI(x, i) == remainderOf2toI(k, i)) { /*printf("skipped\n");*/ continue; }
             //printf("%d ^ %d = ", result, x);
             result = result ^ x;
